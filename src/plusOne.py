@@ -8,8 +8,6 @@ def plusOne(digits):
 
         return digits
 
-    
-
     if digits[-1] == 9:
 
         # digits[-1] = 0
@@ -22,8 +20,6 @@ def plusOne(digits):
         
         else:
 
-            
-        
             digits = plusOne(digits[:-1])
 
             digits.append(0)
@@ -32,8 +28,8 @@ def plusOne(digits):
         
 
 
-print(plusOne([4,3,2,5,6]))
+print(plusOne([4,3,2,5,9]))
 
 print(plusOne([9,8,7,6,5,4,3,2,1,0]))
 
-# print(plusOne([[4,3,2,1]]))
+print(plusOne([9]))
