@@ -1,4 +1,4 @@
- def isMajorityElement(nums: List[int], target: int) -> bool:
+def isMajorityElement(nums, target):
     total_len = len(nums)
 
     def binarySearch(arr,target):
@@ -31,8 +31,5 @@
 
             freq+=1
             nums.pop(found_index)
-
-    print("freq",freq)
-    print("majority",len(nums)/2)
 
     return freq > (total_len/2)
