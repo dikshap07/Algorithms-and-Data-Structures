@@ -1,3 +1,5 @@
+#APPROACH 1 : Moving boundaries
+
 def spiralMatrix(matrix):
     m,n = len(matrix),len(matrix[0])
     print(f"m : {m} , n : {n}")
@@ -61,13 +63,13 @@ def spiralMatrix(matrix):
 
 # print("Final Output : ",spiralMatrix([[1,2,3],[4,5,6],[7,8,9]]))
 # print("Final Output : ",spiralMatrix([[1,2,3,4],[5,6,7,8],[9,10,11,12]]))
-matrxi = [[1,2,3,5,6],[4,5,6,23,1],[7,8,9,3,2]]
+# [1,2,3,4,8,12,11,10,9,5,6,7]
+# [1,2,3,5,6,1,2,3,9,8,7,4,5,6,23]
 # [[1,2,3],[4,5,6]]
+matrxi = [[1,2,3,5,6],[4,5,6,23,1],[7,8,9,3,2]]
+
 print("Final Output : ",spiralMatrix(matrxi))
 
 
-# [1,2,3,4,8,12,11,10,9,5,6,7]
-[1,2,3,5,6,1,2,3,9,8,7,4,5,6,23]
 
-
-
+#APPROACH - 02 
