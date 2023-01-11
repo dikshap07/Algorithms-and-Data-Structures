@@ -1,6 +1,6 @@
 #Two Pass Hash Map
 
-def twoSums(nums,target)
+def twoSums(nums,target):
     hash = {}
     for i,num in enumerate(nums):
         hash[num]= i
