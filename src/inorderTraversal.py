@@ -1,56 +1,79 @@
-class Tree():
+class BinaryTree:
 
-    def __init__(self,val,left,right):
+    def __init__(self,value):
 
-        self.val = val
-        self.left = left
-        self.right = right
+        self.val = value
+        self.left = None
+        self.right = None
+        self.parent = None
     
 
-class Solution():
-
-    #iterative soln
-
-    def inOrderTraversel_iter(root):
-
-        currentNode = root
-        nodes = []
-        stack = []
 
 
-        while currentNode or stack:
+#iterative soln
 
-            while currentNode:
+def inOrderTraversel_iter(root):
 
-                stack.append(currentNode)
-                currentNode = currentNode.left
-
-            currentNode = stack.pop()
-
-            nodes.append(currentNode.val)
-
-            currentNode = currentNode.right
-
-        return nodes
-        
-
-    #recursive soln
+    currentNode = root
+    nodes = []
+    stack = []
 
 
-    def inOrderTraversel_recur(root):
+    while currentNode or stack:
 
-        nodes = []
+        while currentNode:
+
+            stack.append(currentNode)
+            currentNode = currentNode.left
+
+        currentNode = stack.pop()
+
+        nodes.append(currentNode.val)
+
+        currentNode = currentNode.right
+
+    return nodes
+    
+
+#recursive soln
 
 
-        def inorder(root):
+def inOrderTraversel_recur(root):
 
-            if not root:
-                return 
+    nodes = []
 
-            inorder(root.left)
-            nodes.append(root.val)
-            inorder(root.right)
 
-        inorder(root)
+    def inorder(root):
 
-        return nodes
+        if not root:
+            return 
+
+        inorder(root.left)
+        nodes.append(root.val)
+        inorder(root.right)
+
+    inorder(root)
+
+    return nodes
+
+
+#Constructing Binary Tree
+bt = BinaryTree(1)
+bt.parent = None
+bt.left = BinaryTree(2)
+bt.right = BinaryTree(3)
+bt.left.parent = bt
+bt.right.parent = bt
+bt.left.left = BinaryTree(4)
+bt.left.left.parent = bt.left
+k = bt.left.left
+k.right = BinaryTree(8)
+k.right.parent = k
+bt.right.left = BinaryTree(6)
+bt.right.right = BinaryTree(7)
+l = bt.right 
+l.right.parent = l
+l.left.parent = l
+
+print(f" inOrder using iteration : {inOrderTraversel_iter(bt)}")
+print(f" inOrder using Recursion : {inOrderTraversel_recur(bt)}")
