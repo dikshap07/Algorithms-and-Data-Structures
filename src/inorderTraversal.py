@@ -44,6 +44,9 @@ class Solution():
 
         def inorder(root):
 
+            if not root:
+                return 
+
             inorder(root.left)
             nodes.append(root.val)
             inorder(root.right)
