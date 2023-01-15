@@ -14,9 +14,6 @@ def pascalTriangle(nrows):
             for j in range(1,row):
 
                 row_i[j] = tri[row-1][j-1] + tri[row-1][j]
-
-            print(f"{row_i : {row_i}}")
-
         
         tri.append(row_i)
 
