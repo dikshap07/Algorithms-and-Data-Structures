@@ -124,13 +124,4 @@ def validSudoku(board):
 
     # return True
 
-print(validSudoko(board))
-
-
-# if (board[i][col] in row_hash and row_hash[board[i][col]][2] == col) and row_hash[board[i][col]][1] != i:
-
-#     print("repeated in row and col")
-N = 9
-
-rows = [set() for _ in range(N)]
-print(2//3)
+print(validSudoku(board))
