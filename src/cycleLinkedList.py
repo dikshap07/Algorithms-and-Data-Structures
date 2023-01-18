@@ -54,6 +54,3 @@ def hasCycle(head):
     return False
 
 
-
-
-    
