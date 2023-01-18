@@ -52,4 +52,3 @@ def mergeSortedLinkedList(l1,l2):
 
         l2.next = mergeSortedLinkedList(l1,l2.next)
         return l2
- 
