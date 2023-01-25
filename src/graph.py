@@ -1,3 +1,5 @@
+""" Implementation of graph data structure from scratch"""
+
 class Graph():
 
 
