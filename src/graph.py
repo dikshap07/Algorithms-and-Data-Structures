@@ -31,6 +31,11 @@ class Graph():
 
             self.addedge(u,v)
 
+    def anyvertex(self):
+
+        return next(self._neighbours)
+
+
     def addvertex(self,v):
 
         """
