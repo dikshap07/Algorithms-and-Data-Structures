@@ -25,7 +25,6 @@ class Graph():
         #for every vertex in an edge, we want to store the other end of that edge as the neighbour for that vertex
 
         for u,v in self.E:
-
             # self._neighbours[u].add(v)    #putting this in a separate method
             # self._neighbours[v].add(u)
 
@@ -33,7 +32,7 @@ class Graph():
 
     def anyvertex(self):
 
-        return next(self._neighbours)
+        return next(iter(self._neighbours))
 
 
     def addvertex(self,v):
@@ -119,6 +118,11 @@ class Graph():
     def neighbours(self,v):
 
         return iter(self._neighbours[v])  #using iter makes sure nobody can change the private _neighbours
+
+    @property
+    def V(self):
+
+        return iter(self._neighbours)
 
     @property #we make it a property so that we dont have to put () everytime we call method m
     def m(self):
