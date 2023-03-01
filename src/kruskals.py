@@ -5,7 +5,7 @@
 # Class to represent a graph
 
 
-class Graph:
+class GraphDS:
 
 	def __init__(self, vertices):
 		self.V = vertices # No. of vertices
@@ -104,7 +104,7 @@ class Graph:
 
 # Driver's code
 if __name__ == '__main__':
-	g = Graph(4)
+	g = GraphDS(4)
 	g.addEdge(0, 1, 10)
 	g.addEdge(0, 2, 6)
 	g.addEdge(0, 3, 5)
@@ -113,6 +113,3 @@ if __name__ == '__main__':
 
 	# Function call
 	g.KruskalMST()
-
-# This code is contributed bpv Neelam pvadav
-# Improved bpv James Graça-Jones
