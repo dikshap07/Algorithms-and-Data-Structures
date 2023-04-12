@@ -1,4 +1,34 @@
 from collections import defaultdict
+import heapq
+
+"""Priority Queue implementation"""
+
+
+def highFive(items):
+    id_scores = defaultdict(list)
+
+    for (
+        id,
+        score,
+    ) in items:  # O(n) times loop runs for n ids,n times  O(log 5 )heap operations
+        # total = O(nlog5) complexity
+
+        # add to heap for each id
+        heapq.heappush(id_scores[id], score)  # id_scores[id] : heap for id
+
+        if len(id_scores[id]) > 5:  # if len(heap) > 5, we start popping to get max 5
+            heapq.heappop(id_scores[id])
+
+        print(f" Heap for id: {id} is {id_scores[id]}")
+
+    res = [
+        [id, sum(id_scores[id]) // 5] for id in sorted(id_scores.keys())
+    ]  # O(n) for n ids the loop runs, O(nlogn) to sort the dictionary
+    # Total = O(n) + O(nlogn)
+    return res
+
+
+"""Using hashmap and sorting"""
 
 
 def highFive(items):
@@ -61,18 +91,30 @@ def highFive(items):
 
 
 if __name__ == "__main__":
-    # items = [[2,77],[1,91],[1,92],[2,93],[2,97],[1,60],[1,65],[1,87],[1,100],[2,100],[2,76]]
     items = [
+        [2, 77],
+        [1, 91],
+        [1, 92],
+        [2, 93],
+        [2, 97],
+        [1, 60],
+        [1, 65],
+        [1, 87],
         [1, 100],
-        [7, 100],
-        [1, 100],
-        [7, 100],
-        [1, 100],
-        [7, 100],
-        [1, 100],
-        [7, 100],
-        [1, 100],
-        [7, 100],
+        [2, 100],
+        [2, 76],
     ]
+    # items = [
+    #     [1, 100],
+    #     [7, 100],
+    #     [1, 100],
+    #     [7, 100],
+    #     [1, 100],
+    #     [7, 100],
+    #     [1, 100],
+    #     [7, 100],
+    #     [1, 100],
+    #     [7, 100],
+    # ]
 
     print(highFive(items))
