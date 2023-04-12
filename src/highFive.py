@@ -1,7 +1,7 @@
 from collections import defaultdict
 import heapq
 
-"""Priority Queue implementation"""
+"""Priority Queue implementation : minHeap to get top k elements"""
 
 
 def highFive(items):
