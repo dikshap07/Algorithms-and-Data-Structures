@@ -51,7 +51,7 @@ def countBinarySubstrings(s):
     return ans
 
 
-"""Without storing groups, just storing 3 elements of groups"""
+"""Without storing groups, just storing 3 elements of groups, O(n) Time Complexity"""
 
 
 def countBinarySubstrings(self, s):
