@@ -43,4 +43,4 @@ def isValid(string):
     return len(check_stack) == 0
 
 
-print(isValid("()))"))
+print(isValid("()])"))
