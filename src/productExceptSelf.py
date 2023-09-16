@@ -1,5 +1,66 @@
+""" correct Approach: without using division operator
+O(n) :Time , #3*O(n):space
+
+"""
 
 
+def productExceptSelf_(nums):
+
+    size = len(nums)
+
+    L = [1]*size
+    R = [1]*size
+
+    #Create the left product array
+    
+    for i in range(1,size):
+
+        L[i] = L[i-1]*nums[i-1]
+    print(f" L: {L}")
+
+
+    for j in range(size-2,-1,-1):
+            R[j] = R[j+1]*nums[j+1]
+
+    print(f"R : {R}")
+
+
+    res = []
+
+    for i in range(size):
+
+        res.append(L[i]*R[i])
+
+    print(f"res : {res}")
+
+    return res
+
+
+
+
+
+
+    #Create the right product array
+
+    return 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+Passed but we were not supposed to use division operator
+"""
 def productExceptSelf(nums):
 
 
@@ -51,9 +112,10 @@ if __name__ == "__main__":
 
 
 
-    nums = [0,2,3,4]
-    # [-1,1,0,-3,3]
+    nums = [0,0]
+    # [0,2,3,4]
+    # 
     #  [0,0]
-    output = productExceptSelf(nums)
+    output = productExceptSelf_(nums)
     print(f"output: {output}")
 
