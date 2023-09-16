@@ -1,5 +1,42 @@
 
 
+"""Correct Approach: O(n): TIME AND SPACE"""
+
+def productExceptSelf(nums):
+
+    size = len(nums)
+    L = [1]*size
+    R = [1]*size
+
+    #Create the left product array
+    
+    for i in range(1,size):
+
+        L[i] = L[i-1]*nums[i-1]
+    print(f" L: {L}")
+
+
+    for j in range(size-2,-1,-1):
+            R[j] = R[j+1]*nums[j+1]
+
+    print(f"R : {R}")
+
+
+    res = []
+
+    for i in range(size):
+
+        res.append(L[i]*R[i])
+
+    print(f"res : {res}")
+
+    return res
+
+
+
+
+"""Works but werent supposed to use division operator"""
+
 def productExceptSelf(nums):
 
 
