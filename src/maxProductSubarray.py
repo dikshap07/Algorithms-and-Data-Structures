@@ -2,6 +2,7 @@
 
 #get the max product of a subarray in an integer array
 
+"""Dynamic programming solution"""
 
 def maxProductSubarray(nums):
 
