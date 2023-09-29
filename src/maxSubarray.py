@@ -52,10 +52,66 @@ nums = [-2,1,-3,4,-1,2,1,-5,4]
 print(maxSubArray(nums))
 
 
+#latest recursion attempt
+
+
+def maxSubArray(self, nums: List[int]):
+
+    max_sum = sum(nums)
+    arr = nums
+
+    def maxSum(thearray,max_sum):
+
+        print(f"in maxSUm thearray: {thearray}")
+        print(f"in maxSUm max_sum: {max_sum}")
+
+        if len(thearray)==1:
+            print(f"in len 1 array: {thearray}")
+            max_sum = max(max_sum,thearray[0])
+            print(f"in len 1 array sum : {max_sum}")
+            return (thearray,max_sum)
+        else:
+            #left 
+
+            left_arr = thearray[1:]
+            left_sum = sum(left_arr)
+
+            #right 
+
+            right_arr = thearray[:-1]
+            right_sum = sum(right_arr)
+
+
+            if left_sum > right_sum:
+                print(f"left array btter")
+                max_sum = max(left_sum,max_sum)
+
+                arr, max_sum = maxSum(left_arr,max_sum)
+
+            elif  left_sum < right_sum:
+                print(f"right array btter")
+                max_sum = max(right_sum,max_sum)
+
+                arr, max_sum = maxSum(right_arr,max_sum)
+
+            else:
+                print(f"both arrays equal")
+                arr, max_sum_left = maxSum(left_arr,max(left_sum,max_sum))
+                arr, max_sum_right = maxSum(right_arr,max(left_sum,max_sum))
+
+                max_sum = max(max_sum,max_sum_left,max_sum_right)
+
+            return arr,max_sum
+
+        
+    res, res_sum = maxSum(arr,max_sum)
+
+    return res_sum
 
 
 
-#My wrong attempt:
+
+#My wrong attempt:  #9 omnths ago
 
 # def maxSubarray(nums):
 
