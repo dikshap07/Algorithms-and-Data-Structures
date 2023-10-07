@@ -19,8 +19,30 @@ def twosum_sorted(nums,i,res):
             left+=1
             right-=1
 
-            while left < right and nums[left] == nums[i]:
+            while left < right and nums[left] == nums[left-1]:
                 left+=1
+
+def twosum_set(nums,i,res):
+
+    seen = set()#still need to sort the array
+
+    j = i+1
+
+    while j+1  < len(nums)-1:
+
+        complement = -nums[i]-nums[j] #complement
+
+        if complement in seen:
+            j+1
+            res.append([nums[i],nums[j],complement])
+
+            while j+1< len(nums)-1 and nums[j+1]==nums[j]:
+                j+=1
+
+        seen.add(nums[j])
+        j+=1
+
+
 
 
 def threesum(nums):
