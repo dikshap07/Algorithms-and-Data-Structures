@@ -3,7 +3,7 @@
 
 
 
-def dfs(starting_node):
+def dfs_stack(starting_node):
 
     stack = []
     dfs_order = []
@@ -30,7 +30,17 @@ def dfs(starting_node):
 
     return dfs_order
 
+def dfs(root,a= []):
+    if root is None:
+        return
 
+    a.append(root.name)
+
+    for child in root.children:
+        if child:
+            dfs(child,a)
+
+    return a
 
 #building graph
 class Node():
@@ -63,4 +73,4 @@ B.children[1].add_child('J')
 D = tree.children[2]
 D.children[0].add_child('K')
 
-dfs(tree)
+print(dfs(tree))
