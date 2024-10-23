@@ -4,7 +4,6 @@ def binary_search_rec(arr,target,s,e):
 
         return -1
 
-
     mid = (s + e)//2
 
     if arr[mid] == target:
