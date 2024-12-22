@@ -55,7 +55,7 @@ def allPathsCorrect(matrix,processed,row,col):
 
     #Left
     if col > 0:
-        allPathsCorrect(matrix,processed + "D",row,col-1)
+        allPathsCorrect(matrix,processed + "L",row,col-1)
 
     matrix[row][col] =  True  #because now we are out of all the recursive calls for this cell,
                                 # we need to restore its value
